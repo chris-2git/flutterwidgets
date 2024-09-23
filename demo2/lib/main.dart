@@ -1,4 +1,4 @@
-import 'package:demo2/allfruits.dart';
+import 'package:demo2/listviewbulider.dart';
 
 import 'package:flutter/material.dart';
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: product());
+        home: Listvi());
   }
 }
 
