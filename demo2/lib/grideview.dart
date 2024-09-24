@@ -51,7 +51,7 @@ class _GrideviState extends State<Gridevi> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 60,
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.green,
         title: Center(
           child: Text(
             'Fruits Shows',
