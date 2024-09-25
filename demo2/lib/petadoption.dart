@@ -66,6 +66,33 @@ class _PetState extends State<Pet> {
           )
         ],
       ),
+      bottomNavigationBar: Container(
+        width: 30,
+        height: 40,
+        decoration: BoxDecoration(color: Colors.white),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Icon(
+              Icons.home_outlined,
+              color: Colors.grey,
+            ),
+            Text('home'),
+            Icon(
+              Icons.add,
+              color: Colors.grey,
+            ),
+            Icon(
+              Icons.favorite_border_outlined,
+              color: Colors.grey,
+            ),
+            Icon(
+              Icons.person_4_outlined,
+              color: Colors.grey,
+            )
+          ],
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
