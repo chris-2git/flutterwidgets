@@ -1,4 +1,5 @@
 import 'package:demo2/dogs.dart';
+import 'package:demo2/dogs2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -171,19 +172,28 @@ class _PetState extends State<Pet> {
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       children: [
-                        Container(
-                          width: 180,
-                          height: 141,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              bottomLeft: Radius.circular(20),
-                            ),
-                            image: DecorationImage(
-                              image: AssetImage(
-                                images[index],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Dogs2(),
+                                ));
+                          },
+                          child: Container(
+                            width: 180,
+                            height: 141,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                bottomLeft: Radius.circular(20),
                               ),
-                              fit: BoxFit.cover,
+                              image: DecorationImage(
+                                image: AssetImage(
+                                  images[index],
+                                ),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
@@ -238,7 +248,7 @@ class _PetState extends State<Pet> {
                                           fontSize: 10,
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold),
-                                    )
+                                    ),
                                   ],
                                 )
                               ],

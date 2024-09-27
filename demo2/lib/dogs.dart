@@ -116,7 +116,9 @@ class _DogsState extends State<Dogs> {
                       Container(
                         height: 40,
                         width: 150,
-                        // decoration: BoxDecoration(borderRadius: BorderRadius.),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(17),
+                        ),
                       )
                     ],
                   );
