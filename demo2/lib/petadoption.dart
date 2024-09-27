@@ -1,3 +1,4 @@
+import 'package:demo2/dogs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -77,7 +78,6 @@ class _PetState extends State<Pet> {
               Icons.home_outlined,
               color: Colors.grey,
             ),
-            Text('home'),
             Icon(
               Icons.add,
               color: Colors.grey,
@@ -132,16 +132,22 @@ class _PetState extends State<Pet> {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: 120,
-                      height: 60,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(17),
-                        image: DecorationImage(
-                          image: AssetImage(
-                            image[index],
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Dogs()));
+                      },
+                      child: Container(
+                        width: 120,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(17),
+                          image: DecorationImage(
+                            image: AssetImage(
+                              image[index],
+                            ),
+                            fit: BoxFit.cover,
                           ),
-                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
