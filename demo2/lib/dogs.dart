@@ -18,6 +18,15 @@ class _DogsState extends State<Dogs> {
     'assets/rottdog.jpg',
     'assets/germandog.jpg'
   ];
+  List<String> na = [
+    'Normal Dog',
+    'Boxer Dog',
+    'Bull Dog',
+    'Dane Dog',
+    'Lab Dog',
+    'Rott Dog',
+    'Germansheaperd Dog'
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,17 +123,42 @@ class _DogsState extends State<Dogs> {
                         ),
                       ),
                       Container(
-                        height: 40,
+                        height: 84,
                         width: 150,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(17),
                         ),
-                      )
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Name :${na[index]}',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text('Speices : '),
+                            Row(
+                              children: [
+                                Image.asset(
+                                  'assets/dog doc.png',
+                                  height: 20,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text('Doctor consalt:')
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   );
                 },
               ),
-            )
+            ),
           ],
         ),
       ),
