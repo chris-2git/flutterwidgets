@@ -101,7 +101,7 @@ class _DogsState extends State<Dogs> {
             SizedBox(height: 20),
             Expanded(
               child: GridView.builder(
-                itemCount: 8,
+                itemCount: img.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 15,

@@ -73,7 +73,7 @@ class _CircleavState extends State<Circleav> {
         child: Column(
           children: [
             Container(
-              height: 150,
+              height: 250,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Color.fromARGB(251, 27, 94, 101),
@@ -84,11 +84,25 @@ class _CircleavState extends State<Circleav> {
               ),
               child: Column(
                 children: [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage(
-                      'assets/profile1.jpg',
-                    ),
+                  Stack(
+                    children: [
+                      CircleAvatar(
+                        radius: 60,
+                        backgroundImage: AssetImage(
+                          'assets/profile1.jpg',
+                        ),
+                      ),
+                      Positioned(
+                        left: 60,
+                        top: 85,
+                        right: 30,
+                        child: CircleAvatar(
+                          radius: 20,
+                          backgroundColor: Colors.white,
+                          child: Icon(Icons.camera_alt),
+                        ),
+                      )
+                    ],
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
