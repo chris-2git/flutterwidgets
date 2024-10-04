@@ -50,6 +50,48 @@ class _WhatState extends State<What> {
     'geevarghese',
     'sajini'
   ];
+  List<String> time = [
+    '7.00 am',
+    '1.00 am',
+    '3.00 am',
+    '4.am',
+    '7.00 am',
+    '1.00 am',
+    '3.00 am',
+    '4.am',
+    '7.00 am',
+    '1.00 am',
+    '3.00 am',
+    '4.am',
+    '7.00 am',
+    '1.00 am',
+    '3.00 am',
+    '4.am',
+    '7.00 am',
+    '1.00 am',
+    '3.00 am',
+    '4.am',
+    '7.00 am',
+    '1.00 am',
+    '3.00 am',
+    '4.am',
+    '7.00 am',
+    '1.00 am',
+    '3.00 am',
+    '4.am',
+    '7.00 am',
+    '1.00 am',
+    '3.00 am',
+    '4.am',
+    '7.00 am',
+    '1.00 am',
+    '3.00 am',
+    '4.am',
+    '7.00 am',
+    '1.00 am',
+    '3.00 am',
+    '4.am',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,10 +134,12 @@ class _WhatState extends State<What> {
               leading: CircleAvatar(
                 radius: 30,
                 backgroundColor: Colors.green,
-                backgroundImage: NetworkImage(''),
+                backgroundImage: AssetImage(
+                  'assets/dog cat.png',
+                ),
               ),
               trailing: Text(
-                '12.00 am',
+                time[index],
                 style: TextStyle(color: Colors.black),
               ),
             );
