@@ -1,0 +1,216 @@
+import 'package:flutter/material.dart';
+
+class Chat extends StatefulWidget {
+  const Chat({super.key});
+
+  @override
+  State<Chat> createState() => _ChatState();
+}
+
+class _ChatState extends State<Chat> {
+  List<String> na = [
+    'christy',
+    'joshua',
+    'varghese',
+    'Leo',
+    'John',
+    'suresh',
+    'Tony',
+    'Rahul',
+    'anju',
+    'Praveena',
+    'Praven',
+    'Vishal',
+    'Athira',
+    'Christ',
+    'sam',
+    'kiran',
+    'leo',
+    'Martin',
+    'thejus',
+    'prejus',
+    'John',
+    'suresh',
+    'Tony',
+    'Rahul',
+    'anju',
+    'Praveena',
+    'Praven',
+    'Vishal',
+    'Athira',
+    'Christ',
+  ];
+  List<String> message = [
+    'Da evide',
+    'kali undo innu',
+    'sticker',
+    'ni poyo nale varam',
+    'Kollam adipoli',
+    'niyum thirum nale',
+    'thirkan pattummikli thereda',
+    '8inte panikttum ninku',
+    '9 mani akubol pokam',
+    '10 maniku varanam set akama',
+    '11inu avadhi anu ',
+    'adipoli arunu 12th day',
+    'ni varanam 13',
+    'njn pokum 14inu vilikam',
+    'set akam 15 avattte',
+    'ni kari iruno 16 varama',
+    'da ni 17 varanda ',
+    'niyo 19 ano varune',
+    'da free ano on 20th',
+    'ni undekill 21 edukam',
+    'kayili 22 paiss illa',
+    'acc ake 23 ollu mathiyo',
+    'da 24 mathi akyaku',
+    'ni poda 25rs kittila',
+    'njn nine konde chypikam 26 poree',
+    'paiss set ni va on 27',
+    'njn nine konde 28inu pokam',
+    'niyum njanm 29',
+    '30inu kaxjium ellam niyum illa'
+  ];
+  List<int> time = [
+    2,
+    2,
+    3,
+    34,
+    5,
+    4,
+    7,
+    8,
+    9,
+    10,
+    111,
+    12,
+    31,
+    14,
+    615,
+    16,
+    17,
+    18,
+    59,
+    200,
+    201,
+    202,
+    203,
+    24,
+    25,
+    206,
+    267,
+    28,
+    29,
+    300,
+  ];
+  List<String> timmes = [
+    'Today',
+    'Today',
+    'Today',
+    'Today',
+    'Today',
+    'yesterday',
+    'yesterday',
+    'yesterday',
+    'yesterday',
+    'yesterday',
+    '23/4/8',
+    '3/4/22',
+    '4/7/8',
+    '3/12/23',
+    '8/9/21',
+    '6/7/23',
+    '7/7/23',
+    '8/7/23',
+    '9/7/23',
+    '10/7/23',
+    '23/4/8',
+    '3/4/22',
+    '4/7/8',
+    '3/12/23',
+    '8/9/21',
+    '6/7/23',
+    '7/7/23',
+    '8/7/23',
+    '9/7/23',
+    '10/7/23',
+  ];
+  List<String> img = [
+    'assets/whatspic1.jpg',
+    'assets/whatspic2.jpg',
+    'assets/whatspic3.jpg',
+    'assets/whatspic4.jpg',
+    'assets/whatspicf.jpg',
+    'assets/whatspicm.jpg',
+    'assets/whatspic1.jpg',
+    'assets/whatspic2.jpg',
+    'assets/whatspic3.jpg',
+    'assets/whatspic4.jpg',
+    'assets/whatspicf.jpg',
+    'assets/whatspicm.jpg',
+    'assets/whatspic1.jpg',
+    'assets/whatspic2.jpg',
+    'assets/whatspic3.jpg',
+    'assets/whatspic4.jpg',
+    'assets/whatspicf.jpg',
+    'assets/whatspicm.jpg',
+    'assets/whatspic1.jpg',
+    'assets/whatspic2.jpg',
+    'assets/whatspic3.jpg',
+    'assets/whatspic4.jpg',
+    'assets/whatspicf.jpg',
+    'assets/whatspicm.jpg',
+    'assets/whatspic1.jpg',
+    'assets/whatspic2.jpg',
+    'assets/whatspic3.jpg',
+    'assets/whatspic4.jpg',
+    'assets/whatspicf.jpg',
+    'assets/whatspicm.jpg',
+  ];
+  List<String> text = ['Good', 'Bad', 'low Qulity', ''];
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return Scaffold(
+      body: ListView.builder(
+        itemCount: img.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(
+              na[index],
+              style: TextStyle(color: Colors.black),
+            ),
+            subtitle: Text(
+              message[index],
+            ),
+            leading: CircleAvatar(
+              radius: 30,
+              backgroundColor: Colors.green,
+              backgroundImage: AssetImage(img[index]),
+            ),
+            trailing: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  timmes[index],
+                  style: TextStyle(color: Colors.green),
+                ),
+                CircleAvatar(
+                  radius: 15,
+                  backgroundColor: Colors.green,
+                  child: Text(
+                    time[index].toString(),
+                    style: TextStyle(
+                        fontSize: 13,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
