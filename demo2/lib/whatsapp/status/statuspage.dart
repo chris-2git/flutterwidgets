@@ -117,6 +117,7 @@ class _StatusState extends State<Status> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -135,10 +136,18 @@ class _StatusState extends State<Status> {
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
-                    Text(
-                      'today 10:20 am',
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w300),
+                    Row(
+                      children: [
+                        Text(
+                          'today 10:20 am',
+                          style: TextStyle(
+                              color: Colors.black, fontWeight: FontWeight.w300),
+                        ),
+                        SizedBox(
+                          width: size.width * 0.35,
+                        ),
+                        Icon(Icons.more_vert_rounded),
+                      ],
                     ),
                   ],
                 ),
@@ -147,20 +156,12 @@ class _StatusState extends State<Status> {
             SizedBox(
               height: size.height * 0.03,
             ),
-            Row(
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      'Recent Updates',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15),
-                    ),
-                  ],
-                ),
-              ],
+            Text(
+              'Recent Updates',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
             ),
             Expanded(
               child: ListView.builder(
