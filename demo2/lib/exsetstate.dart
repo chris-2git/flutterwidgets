@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 
-class SetState extends StatefulWidget {
-  const SetState({super.key});
+class Exset extends StatefulWidget {
+  const Exset({super.key});
 
   @override
-  State<SetState> createState() => _SetStateState();
+  State<Exset> createState() => _ExsetState();
 }
 
-class _SetStateState extends State<SetState> {
-  int counter = 0;
+class _ExsetState extends State<Exset> {
+  bool isFav = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          'Counter Application',
+          'Colour Magic',
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -23,21 +24,25 @@ class _SetStateState extends State<SetState> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              counter.toString(),
-              style: TextStyle(color: Colors.black, fontSize: 90),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                isFav ? Icons.favorite : Icons.favorite_border_outlined,
+                color: isFav ? Colors.red : Colors.black,
+                size: 80,
+              ),
             ),
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  counter++;
+                  isFav = !isFav;
                 });
               },
               child: Text(
-                'Count',
+                'Click',
                 style: TextStyle(color: Colors.black),
               ),
-            ),
+            )
           ],
         ),
       ),
