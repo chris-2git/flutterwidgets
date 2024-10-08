@@ -1,28 +1,25 @@
-import 'dart:js_util';
-
 import 'package:demo2/instagram/Instahome/instahome.dart';
-import 'package:demo2/instagram/Llikes/likes.dart';
 import 'package:demo2/instagram/addpost/addpost.dart';
+import 'package:demo2/instagram/likes/likes.dart';
 import 'package:demo2/instagram/profile/profile.dart';
 import 'package:demo2/instagram/search/search.dart';
-
 import 'package:flutter/material.dart';
 
-class Insta extends StatefulWidget {
-  const Insta({super.key});
+class Instagram extends StatefulWidget {
+  const Instagram({super.key});
 
   @override
-  State<Insta> createState() => _InstaState();
+  State<Instagram> createState() => _InstagramState();
 }
 
-class _InstaState extends State<Insta> {
+class _InstagramState extends State<Instagram> {
   int _instaIndex = 0;
   static const List<Widget> _instaOptions = <Widget>[
     Instahome(),
     Search(),
     Addpost(),
-    Likes(),
-    Profile(),
+    likesnote(),
+    Profileinsta(),
   ];
   void _instaTapped(int Index) {
     setState(() {
@@ -33,18 +30,6 @@ class _InstaState extends State<Insta> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Instagram',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.message_outlined),
-          ),
-        ],
-      ),
       body: Center(
         child: _instaOptions.elementAt(_instaIndex),
       ),

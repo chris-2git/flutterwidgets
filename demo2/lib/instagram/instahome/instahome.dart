@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:demo2/container2task.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,51 +9,58 @@ class Instahome extends StatefulWidget {
 }
 
 class _InstahomeState extends State<Instahome> {
+  List<String> img = [
+    'assets/profile1.jpg',
+    'assets/whatspic1.jpg',
+    'assets/whatspic2.jpg',
+    'assets/whatspic3.jpg',
+    'assets/whatspic4.jpg',
+    'assets/whatspicf.jpg',
+    'assets/whatspicm.jpg',
+    'assets/profile1.jpg',
+    'assets/whatspic1.jpg',
+    'assets/whatspic2.jpg',
+    'assets/whatspic3.jpg',
+    'assets/whatspic4.jpg',
+    'assets/whatspicf.jpg',
+    'assets/whatspicm.jpg',
+    'assets/profile1.jpg',
+    'assets/whatspic1.jpg',
+    'assets/whatspic2.jpg',
+    'assets/whatspic3.jpg',
+    'assets/whatspic4.jpg',
+    'assets/whatspicf.jpg',
+    'assets/whatspicm.jpg',
+  ];
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Row(
-        children: [
-          Stack(
-            children: [
-              CircleAvatar(
-                radius: 30,
-                backgroundImage: AssetImage('assets/profile1.jpg'),
-              ),
-              Positioned(
-                left: 40,
-                top: 40,
-                child: CircleAvatar(
-                  radius: 10,
-                  backgroundColor: Colors.blue,
-                  child: Icon(
-                    Icons.add,
-                    color: Colors.white,
-                    size: 9,
-                  ),
-                ),
-              ),
-            ],
+      appBar: AppBar(
+        title: Text(
+          'Instagram',
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.message_outlined),
           ),
-          Expanded(
+        ],
+      ),
+      body: Column(
+        children: [
+          Container(
+            height: size.height * 0.07,
             child: ListView.builder(
+              itemCount: img.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return CircleAvatar(
+                  backgroundImage: AssetImage(
+                    img[index],
+                  ),
                   radius: 30,
-                );
-              },
-            ),
-          ),
-          Expanded(
-            child: GridView.builder(
-              gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
-              itemBuilder: (context, index) {
-                return Container(
-                  width: 233,
-                  height: 233,
-                  color: Colors.blue,
                 );
               },
             ),
