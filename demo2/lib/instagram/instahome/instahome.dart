@@ -10,28 +10,19 @@ class Instahome extends StatefulWidget {
 
 class _InstahomeState extends State<Instahome> {
   List<String> img = [
-    'assets/profile1.jpg',
-    'assets/whatspic1.jpg',
-    'assets/whatspic2.jpg',
-    'assets/whatspic3.jpg',
-    'assets/whatspic4.jpg',
-    'assets/whatspicf.jpg',
-    'assets/whatspicm.jpg',
-    'assets/profile1.jpg',
-    'assets/whatspic1.jpg',
-    'assets/whatspic2.jpg',
-    'assets/whatspic3.jpg',
-    'assets/whatspic4.jpg',
-    'assets/whatspicf.jpg',
-    'assets/whatspicm.jpg',
-    'assets/profile1.jpg',
-    'assets/whatspic1.jpg',
-    'assets/whatspic2.jpg',
-    'assets/whatspic3.jpg',
-    'assets/whatspic4.jpg',
-    'assets/whatspicf.jpg',
-    'assets/whatspicm.jpg',
+    'assets/passionchristpic.jpeg',
+    'assets/money hiestpic.jpg',
+    'assets/leopic.jpg',
+    'assets/theflashpic.jpg',
+    'assets/vikingspic.jpg',
+    'assets/cidmoosapic.jpeg',
+    'assets/deadpoolpic.jpeg',
+    'assets/aveshampic.jpeg',
+    'assets/bougvillapic.jpeg',
   ];
+  bool isFav = false;
+  int count = 0;
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -52,19 +43,113 @@ class _InstahomeState extends State<Instahome> {
         children: [
           Container(
             height: size.height * 0.07,
-            child: ListView.builder(
-              itemCount: img.length,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return CircleAvatar(
-                  backgroundImage: AssetImage(
-                    img[index],
-                  ),
+            child: Stack(
+              children: [
+                CircleAvatar(
                   radius: 30,
+                  backgroundImage: AssetImage('assets/profile1.jpg'),
+                ),
+                Positioned(
+                  left: 40,
+                  top: 25,
+                  child: CircleAvatar(
+                    radius: 10,
+                    backgroundColor: Colors.blue,
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                      size: 9,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return CircleAvatar(
+                        radius: 30,
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+          ListTile(
+            leading: CircleAvatar(
+              radius: 20,
+              backgroundImage: AssetImage('assets/profile1.jpg'),
+            ),
+            title: Text(
+              'c.j.v._',
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            trailing: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.more_vert_outlined),
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      height: 350,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            img[index],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        IconButton(
+                          onPressed: () {
+                            setState(() {
+                              isFav = !isFav;
+                              count++;
+                            });
+                            Text(count.toString());
+                          },
+                          icon: Icon(
+                              isFav
+                                  ? Icons.favorite_border_outlined
+                                  : Icons.favorite,
+                              color: isFav ? Colors.black : Colors.red),
+                        ),
+                        Text(
+                          count.toString(),
+                          style: TextStyle(color: Colors.black, fontSize: 10),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.comment_outlined),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.share_location,
+                          ),
+                        ),
+                        SizedBox(
+                          width: size.width * 0.45,
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.save_alt_outlined),
+                        ),
+                      ],
+                    ),
+                  ],
                 );
               },
             ),
-          ),
+          )
         ],
       ),
     );

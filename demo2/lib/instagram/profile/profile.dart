@@ -16,6 +16,27 @@ class _ProfileinstaState extends State<Profileinsta> {
     'assets/whatspic4.jpg',
     'assets/whatspicm.jpg',
     'assets/whatspicf.jpg',
+    'assets/profile1.jpg',
+    'assets/whatspic1.jpg',
+    'assets/whatspic2.jpg',
+    'assets/whatspic3.jpg',
+    'assets/whatspic4.jpg',
+    'assets/whatspicm.jpg',
+    'assets/whatspicf.jpg',
+    'assets/profile1.jpg',
+    'assets/whatspic1.jpg',
+    'assets/whatspic2.jpg',
+    'assets/whatspic3.jpg',
+    'assets/whatspic4.jpg',
+    'assets/whatspicm.jpg',
+    'assets/whatspicf.jpg',
+    'assets/profile1.jpg',
+    'assets/whatspic1.jpg',
+    'assets/whatspic2.jpg',
+    'assets/whatspic3.jpg',
+    'assets/whatspic4.jpg',
+    'assets/whatspicm.jpg',
+    'assets/whatspicf.jpg',
   ];
   @override
   Widget build(BuildContext context) {
@@ -81,7 +102,7 @@ class _ProfileinstaState extends State<Profileinsta> {
                 Column(
                   children: [
                     Text(
-                      '61',
+                      '31',
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
@@ -189,6 +210,7 @@ class _ProfileinstaState extends State<Profileinsta> {
             ),
             Expanded(
               child: GridView.builder(
+                itemCount: img.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
                   mainAxisSpacing: 10,
