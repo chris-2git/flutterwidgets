@@ -43,34 +43,38 @@ class _InstahomeState extends State<Instahome> {
         children: [
           Container(
             height: size.height * 0.07,
-            child: Stack(
+            child: Row(
               children: [
-                CircleAvatar(
-                  radius: 30,
-                  backgroundImage: AssetImage('assets/profile1.jpg'),
-                ),
-                Positioned(
-                  left: 40,
-                  top: 25,
-                  child: CircleAvatar(
-                    radius: 10,
-                    backgroundColor: Colors.blue,
-                    child: Icon(
-                      Icons.add,
-                      color: Colors.white,
-                      size: 9,
+                Stack(
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage('assets/profile1.jpg'),
                     ),
-                  ),
-                ),
-                Expanded(
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return CircleAvatar(
-                        radius: 30,
-                      );
-                    },
-                  ),
+                    Positioned(
+                      left: 40,
+                      top: 25,
+                      child: CircleAvatar(
+                        radius: 10,
+                        backgroundColor: Colors.blue,
+                        child: Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 9,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          return CircleAvatar(
+                            radius: 30,
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

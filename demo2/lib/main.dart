@@ -1,5 +1,4 @@
 import 'package:demo2/instagram/instagram.dart';
-
 import 'package:flutter/material.dart';
 
 void main() {
