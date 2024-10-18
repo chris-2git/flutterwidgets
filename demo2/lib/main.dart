@@ -1,4 +1,10 @@
+import 'package:demo2/drawer.dart';
+import 'package:demo2/instagram/Instahome/instahome.dart';
+import 'package:demo2/instagram/addpost/addpost.dart';
 import 'package:demo2/instagram/instagram.dart';
+import 'package:demo2/ottplatform/ottplat.dart';
+import 'package:demo2/ottplatform/profileott/profileott.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +24,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: Instagram());
+        home: Ottplatform());
   }
 }
 

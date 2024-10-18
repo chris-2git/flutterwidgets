@@ -9,8 +9,8 @@ class Historyott extends StatefulWidget {
 }
 
 class _HistoryottState extends State<Historyott> {
-  bool colin = true;
-  bool coloin = false;
+  bool colin = false;
+  bool coloin = true;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -23,44 +23,55 @@ class _HistoryottState extends State<Historyott> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: colin ? Colors.red : Colors.grey),
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       setState(() {
-                        colin = !colin;
+                        coloin = !coloin;
+                        print(coloin);
                       });
                     },
-                    child: Text(
-                      'Watching',
-                      style: TextStyle(
-                        color: Colors.white,
+                    child: Container(
+                      height: 50,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: coloin ? Colors.red : Colors.black,
+                          borderRadius: BorderRadius.circular(10),
+                          border: coloin
+                              ? Border.all(color: Colors.red)
+                              : Border.all(color: Colors.white)),
+                      child: Center(
+                          child: Text(
+                        'Watching',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      )),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        colin = !colin;
+                        print('');
+                      });
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: colin ? Colors.red : Colors.black,
+                          borderRadius: BorderRadius.circular(10),
+                          border: colin
+                              ? Border.all(color: Colors.red)
+                              : Border.all(color: Colors.white)),
+                      child: Center(
+                        child: Text(
+                          'Downloaded',
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: coloin ? Colors.green : Colors.grey),
-                    onPressed: () {
-                      coloin = !coloin;
-                    },
-                    child: Text(
-                      'Dowmloaded',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  // Container(
-                  //   height: size.height * 200,
-                  //   child: ListView.builder(
-                  //     itemBuilder: (context, index) {
-                  //       return Container(
-                  //         width: size.width * 300,
-                  //         height: size.height * 200,
-                  //         color: Colors.blue,
-                  //       );
-                  //     },
-                  //   ),
-                  // ),
                 ],
               ),
             ],

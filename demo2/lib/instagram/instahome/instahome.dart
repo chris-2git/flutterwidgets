@@ -153,7 +153,7 @@ class _InstahomeState extends State<Instahome> {
                 );
               },
             ),
-          )
+          ),
         ],
       ),
     );
