@@ -20,11 +20,11 @@ class _DrawerwidState extends State<Drawerwid> {
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text('Athira'),
-              accountEmail: Text('athira@gmail.com'),
+              accountName: Text('christy'),
+              accountEmail: Text('Christy.com'),
               currentAccountPicture: CircleAvatar(
                 radius: 50,
-                backgroundImage: AssetImage('assets/lady.jpeg'),
+                backgroundImage: AssetImage('assets/profile1.jpg'),
               ),
               decoration: BoxDecoration(color: Colors.green),
             ),

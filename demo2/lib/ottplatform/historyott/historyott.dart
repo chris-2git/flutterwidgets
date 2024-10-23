@@ -1,3 +1,4 @@
+import 'package:demo2/ottplatform/historysub/historysub.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,18 @@ class Historyott extends StatefulWidget {
 }
 
 class _HistoryottState extends State<Historyott> {
+  List<String> name = [
+    'A Quest pice 2',
+    'Money heist',
+    'The Flash',
+    'Furie',
+    'Joker',
+    'Leo',
+  ];
+  List<String> img = ['assets/'];
+  List<String> time = [];
+  List<String> watch = [''];
+  List<IconData> icon = [];
   bool colin = false;
   bool coloin = true;
   @override
@@ -74,6 +87,19 @@ class _HistoryottState extends State<Historyott> {
                   ),
                 ],
               ),
+              Expanded(
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return Historysub(
+                      name: name[index],
+                      img: img[index],
+                      time: time[index],
+                      watch: watch[index],
+                      icon: icon[index],
+                    );
+                  },
+                ),
+              )
             ],
           ),
         ),

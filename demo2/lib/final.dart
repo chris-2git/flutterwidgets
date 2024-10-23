@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 class Profilecontainer extends StatefulWidget {
   final IconData leadingicon;
   final String name;
-  final String number;
+
   final Color colo;
+  final IconData traling;
 
   const Profilecontainer({
     super.key,
     required this.leadingicon,
     required this.name,
-    required this.number,
     required this.colo,
+    required this.traling,
   });
 
   @override
@@ -40,9 +41,9 @@ class _ProfilecontainerState extends State<Profilecontainer> {
             widget.name,
             style: const TextStyle(color: Colors.white),
           ),
-          trailing: Text(
-            widget.number,
-            style: const TextStyle(color: Colors.white), //thisapplyed
+          trailing: Icon(
+            widget.traling, color: Colors.black,
+            //this applyed in ottplatform in profile
           ),
         ),
       ),

@@ -22,6 +22,19 @@ class _profileottState extends State<profileott> {
     Icons.history,
     Icons.history,
   ];
+  List<IconData> lab = [
+    Icons.settings,
+    Icons.subscriptions_outlined,
+    Icons.lock,
+    Icons.logout,
+  ];
+  List<IconData> labe = [
+    Icons.arrow_forward_ios_sharp,
+    Icons.arrow_forward_ios_sharp,
+    Icons.arrow_forward_ios_sharp,
+    Icons.arrow_forward_ios_sharp,
+  ];
+  List<String> names = ['Settings', 'Subcrbition', 'Change Password', 'Logout'];
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -109,8 +122,8 @@ class _profileottState extends State<profileott> {
                     return Profilecontainer(
                       leadingicon: label[index],
                       name: name[index],
-                      number: '2',
                       colo: Colors.black,
+                      traling: labe[index],
                     );
                   },
                 ),
@@ -130,9 +143,9 @@ class _profileottState extends State<profileott> {
                   itemCount: 4,
                   itemBuilder: (context, index) {
                     return Profilecontainer(
-                      leadingicon: Icons.book,
-                      name: name[index],
-                      number: '2',
+                      leadingicon: lab[index],
+                      traling: labe[index],
+                      name: names[index],
                       colo: Colors.red,
                     );
                   },
