@@ -45,7 +45,7 @@ class _DateState extends State<Date> {
                   },
                 ),
               ),
-              readOnly: true, // To prevent manual editing
+              // readOnly: true, // To prevent manual editing
             ),
           ],
         ),

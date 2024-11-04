@@ -7,7 +7,7 @@ class Historysub extends StatefulWidget {
   final String name;
   final String time;
   final String watch;
-
+  final IconData arrow;
   const Historysub({
     super.key,
     required this.img,
@@ -15,6 +15,7 @@ class Historysub extends StatefulWidget {
     required this.name,
     required this.time,
     required this.watch,
+    required this.arrow,
   });
 
   @override
@@ -27,37 +28,62 @@ class _HistorysubState extends State<Historysub> {
     final size = MediaQuery.of(context).size;
     return Row(
       children: [
-        Container(
-          height: size.height * 0.06,
-          width: size.width * 0.3,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(widget.img),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            height: size.height * 0.12,
+            width: size.width * 0.45,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(7),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage(widget.img),
+              ),
             ),
-          ),
-          child: Center(
-            child: Icon(
-              widget.icon,
+            child: Center(
+              child: Icon(
+                widget.icon,
+              ),
             ),
           ),
         ),
         Container(
+          height: size.height * 0.14,
           width: size.width * 0.4,
-          height: size.height * 0.06,
-          child: Column(
-            children: [
-              Text(
-                widget.name,
-              ),
-              Text(
-                widget.time,
-              ),
-              Text(
-                widget.watch,
-              ),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.name,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  widget.time,
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 13,
+                  ),
+                ),
+                Text(
+                  widget.watch,
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
+            ),
           ),
-        )
+        ),
+        Icon(
+          widget.arrow,
+          color: Colors.grey,
+        ),
       ],
     );
   }

@@ -33,7 +33,7 @@ class _HomeottState extends State<Homeott> {
   List<String> imgs = [
     'assets/leopic.jpeg',
     'assets/theflashpic.jpg',
-    'assets/vikings.jpg',
+    'assets/vikingspic.jpg',
     'assets/money.jpg',
     'assets/cidmoosapic.jpeg',
     'assets/deadpoolpic.jpeg',

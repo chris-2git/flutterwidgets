@@ -34,37 +34,19 @@ class _InstagramState extends State<Instagram> {
         child: _instaOptions.elementAt(_instaIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-              ),
-              label: 'Home',
-              backgroundColor: Colors.black),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Search',
-              backgroundColor: Colors.black),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.add_box_rounded),
-              label: 'post',
-              backgroundColor: Colors.black),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_border_outlined),
-              label: 'Likes',
-              backgroundColor: Colors.black),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person_pin_outlined),
-              label: 'profile',
-              backgroundColor: Colors.black),
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.history), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
         ],
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.fixed,
         currentIndex: _instaIndex,
-        selectedItemColor: Colors.grey,
-        unselectedItemColor: Colors.black,
-        iconSize: 25,
+        iconSize: 30,
         onTap: _instaTapped,
-        elevation: 10,
       ),
     );
   }
