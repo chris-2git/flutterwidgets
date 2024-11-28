@@ -14,6 +14,7 @@ class _likesnoteState extends State<likesnote> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.black,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -21,14 +22,14 @@ class _likesnoteState extends State<likesnote> {
               Text(
                 'I will give U my Likes ',
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontWeight: FontWeight.w300,
                   fontSize: 30,
                 ),
               ),
               Text(
                 count.toString(),
-                style: TextStyle(color: Colors.black, fontSize: 90),
+                style: TextStyle(color: Colors.white, fontSize: 90),
               ),
               ElevatedButton(
                 onPressed: () {
@@ -38,7 +39,7 @@ class _likesnoteState extends State<likesnote> {
                 },
                 child: Icon(
                   iscol ? Icons.favorite : Icons.favorite_border_outlined,
-                  color: iscol ? Colors.white : Colors.black,
+                  color: iscol ? Colors.red : Colors.white,
                   size: 50,
                 ),
               ),

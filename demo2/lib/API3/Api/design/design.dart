@@ -1,29 +1,33 @@
 import 'package:demo2/API2/api/api.dart';
 import 'package:demo2/API2/api/widget/widget.dart';
+import 'package:demo2/API3/Api/api.dart';
+import 'package:demo2/API3/Api/widget/widget.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-class Flimscreen extends StatefulWidget {
-  static const routename = "all_film_screen";
-  const Flimscreen({super.key});
+class Categoriescreen extends StatefulWidget {
+  static const routename = " Categories";
+  const Categoriescreen({
+    super.key,
+  });
 
   @override
-  State<Flimscreen> createState() => _FamersScreenState();
+  State<Categoriescreen> createState() => _FamersScreenState();
 }
 
-class _FamersScreenState extends State<Flimscreen> {
+class _FamersScreenState extends State<Categoriescreen> {
   @override
   void initState() {
-    Provider.of<FlimProvider>(context, listen: false)
-        .getAllFarmersData(context: context);
+    Provider.of<CategoriesProvider>(context, listen: false)
+        .CategoriesData(context: context);
 
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    final flim = Provider.of<FlimProvider>(context);
+    final cat = Provider.of<CategoriesProvider>(context);
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
@@ -37,7 +41,7 @@ class _FamersScreenState extends State<Flimscreen> {
               color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
         ),
       ),
-      body: flim.loadingSpinner
+      body: cat.loadingSpinner
           ? Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -49,7 +53,7 @@ class _FamersScreenState extends State<Flimscreen> {
                 ),
               ],
             )
-          : flim.flims.isEmpty
+          : cat.cats.isEmpty
               ? Text('No Famers...')
               : SizedBox(
                   height: size.height * 0.9,
@@ -60,16 +64,12 @@ class _FamersScreenState extends State<Flimscreen> {
                         mainAxisSpacing: 15,
                         childAspectRatio: 0.6),
                     itemBuilder: (context, index) {
-                      return Filmsdetails(
-                        filmId: flim.flims[index].filmId,
-                        title: flim.flims[index].title,
-                        director: flim.flims[index].director,
-                        producer: flim.flims[index].producer,
-                        screenwriter: flim.flims[index].screenwriter,
-                        category: flim.flims[index].category,
-                        language: flim.flims[index].language,
-                        releaseYear: flim.flims[index].releaseYear,
-                        poster: flim.flims[index].poster,
+                      return Categories(
+                        idCategory: cat.cats[index].idCategory,
+                        strCategory: cat.cats[index].strCategory,
+                        strCategoryThumb: cat.cats[index].strCategoryThumb,
+                        strCategoryDescription:
+                            cat.cats[index].strCategoryDescription,
                       );
                     },
                   ),

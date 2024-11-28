@@ -43,18 +43,22 @@ class _ProfileinstaState extends State<Profileinsta> {
     final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.black,
         body: Column(
           children: [
             Row(
               children: [
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.person_pin),
+                  icon: Icon(
+                    Icons.person_pin,
+                    color: Colors.white,
+                  ),
                 ),
                 Text(
                   'Person detalis',
                   style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+                      color: Colors.white, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   width: size.width * 0.30,
@@ -63,14 +67,14 @@ class _ProfileinstaState extends State<Profileinsta> {
                   onPressed: () {},
                   icon: Icon(
                     Icons.add,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                 ),
                 IconButton(
                   onPressed: () {},
                   icon: Icon(
                     Icons.menu,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                 ),
               ],
@@ -104,9 +108,13 @@ class _ProfileinstaState extends State<Profileinsta> {
                     Text(
                       '31',
                       style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
-                    Text('Posts')
+                    Text(
+                      'Posts',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
                 Column(
@@ -114,9 +122,13 @@ class _ProfileinstaState extends State<Profileinsta> {
                     Text(
                       '199',
                       style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
-                    Text('Followers')
+                    Text(
+                      'Followers',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    )
                   ],
                 ),
                 Column(
@@ -124,9 +136,13 @@ class _ProfileinstaState extends State<Profileinsta> {
                     Text(
                       '199',
                       style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
-                    Text('Following')
+                    Text(
+                      'Following',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
               ],
@@ -134,7 +150,6 @@ class _ProfileinstaState extends State<Profileinsta> {
             Container(
               width: double.infinity,
               height: 100,
-              color: Colors.white,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -145,17 +160,17 @@ class _ProfileinstaState extends State<Profileinsta> {
                         Text(
                           'Name :',
                           style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                              color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                         Text(
                           'username :',
                           style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                              color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                         Text(
                           'Bio :',
                           style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                              color: Colors.white, fontWeight: FontWeight.bold),
                         )
                       ],
                     ),
@@ -185,11 +200,14 @@ class _ProfileinstaState extends State<Profileinsta> {
                 Text(
                   'Stroy Highlights',
                   style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+                      color: Colors.white, fontWeight: FontWeight.bold),
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.arrow_drop_down),
+                  icon: Icon(
+                    Icons.arrow_drop_down,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
@@ -200,9 +218,11 @@ class _ProfileinstaState extends State<Profileinsta> {
                   children: [
                     Icon(
                       Icons.grid_on_outlined,
+                      color: Colors.white,
                     ),
                     Icon(
                       Icons.person_pin_rounded,
+                      color: Colors.white,
                     ),
                   ],
                 ),

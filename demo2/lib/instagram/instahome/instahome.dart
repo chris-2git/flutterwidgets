@@ -12,7 +12,7 @@ class _InstahomeState extends State<Instahome> {
   List<String> img = [
     'assets/passionchristpic.jpeg',
     'assets/money hiestpic.jpg',
-    'assets/leopic.jpg',
+    'assets/deadpoolpic.jpeg',
     'assets/theflashpic.jpg',
     'assets/vikingspic.jpg',
     'assets/cidmoosapic.jpeg',
@@ -27,10 +27,12 @@ class _InstahomeState extends State<Instahome> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Text(
           'Instagram',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         actions: [
           IconButton(
@@ -54,7 +56,10 @@ class _InstahomeState extends State<Instahome> {
                           'assets/profile1.jpg',
                         ),
                       ),
-                      Text('Your story'),
+                      Text(
+                        'Your story',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ],
                   ),
                   Expanded(
@@ -71,6 +76,7 @@ class _InstahomeState extends State<Instahome> {
                                   img[index],
                                 ),
                               ),
+                              // Text('')
                             ],
                           ),
                         );
@@ -86,6 +92,7 @@ class _InstahomeState extends State<Instahome> {
                 children: [
                   Expanded(
                     child: ListView.builder(
+                      itemCount: img.length,
                       itemBuilder: (context, index) {
                         return Column(
                           children: [
@@ -98,12 +105,15 @@ class _InstahomeState extends State<Instahome> {
                               title: Text(
                                 'c.j.v._',
                                 style: TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ),
                               trailing: IconButton(
                                 onPressed: () {},
-                                icon: Icon(Icons.more_vert_outlined),
+                                icon: Icon(
+                                  Icons.more_vert_outlined,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                             Container(
@@ -136,24 +146,31 @@ class _InstahomeState extends State<Instahome> {
                                 Text(
                                   count.toString(),
                                   style: TextStyle(
-                                      color: Colors.black, fontSize: 10),
+                                      color: Colors.white, fontSize: 10),
                                 ),
                                 IconButton(
                                   onPressed: () {},
-                                  icon: Icon(Icons.comment_outlined),
+                                  icon: Icon(
+                                    Icons.comment_outlined,
+                                    color: Colors.white,
+                                  ),
                                 ),
                                 IconButton(
                                   onPressed: () {},
                                   icon: Icon(
                                     Icons.share_location,
+                                    color: Colors.white,
                                   ),
                                 ),
                                 SizedBox(
-                                  width: size.width * 0.45,
+                                  width: size.width * 0.40,
                                 ),
                                 IconButton(
                                   onPressed: () {},
-                                  icon: Icon(Icons.save_alt_outlined),
+                                  icon: Icon(
+                                    Icons.save_alt_outlined,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ],
                             ),

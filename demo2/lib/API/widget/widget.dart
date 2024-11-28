@@ -4,13 +4,13 @@ class GardenWidget extends StatefulWidget {
   final String id;
   final String name;
   final String image;
-  final String describtion;
+  final String description;
   const GardenWidget({
     super.key,
     required this.id,
     required this.name,
     required this.image,
-    required this.describtion,
+    required this.description,
   });
 
   @override
@@ -20,6 +20,7 @@ class GardenWidget extends StatefulWidget {
 class _GardenWidgetState extends State<GardenWidget> {
   @override
   Widget build(BuildContext context) {
+    final style = TextStyle(color: Colors.black);
     final size = MediaQuery.of(context).size;
     return Column(
       children: [
@@ -44,19 +45,28 @@ class _GardenWidgetState extends State<GardenWidget> {
         ),
         Container(
           width: size.width * 0.40,
-          height: size.height * 0.30,
-          child: Column(
-            children: [
-              Text(
-                widget.name,
-              ),
-              SizedBox(
-                height: size.height * 0.010,
-              ),
-              Text(
-                widget.describtion,
-              ),
+          height: size.height * 0.35,
+          decoration: BoxDecoration(
+            color: Color.fromARGB(255, 145, 185, 204),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(15),
+              bottomRight: Radius.circular(15),
+            ),
+            boxShadow: [
+              BoxShadow(offset: Offset(0, 5), blurRadius: 10),
             ],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Descrpition ${widget.description}",
+                  style: style,
+                ),
+              ],
+            ),
           ),
         ),
       ],

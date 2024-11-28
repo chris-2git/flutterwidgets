@@ -13,6 +13,7 @@ class _SearchState extends State<Search> {
     final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.black,
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(

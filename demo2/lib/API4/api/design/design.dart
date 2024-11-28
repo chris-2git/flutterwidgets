@@ -1,29 +1,31 @@
-import 'package:demo2/API/api/api.dart';
-import 'package:demo2/api/widget/widget.dart';
+import 'package:demo2/API4/api/api.dart';
+import 'package:demo2/API4/api/widget/widget.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-class GardenScreen extends StatefulWidget {
-  static const routename = 'all_gardens_screen';
-  const GardenScreen({super.key});
+class Productscreen extends StatefulWidget {
+  static const routename = " Categories";
+  const Productscreen({
+    super.key,
+  });
 
   @override
-  State<GardenScreen> createState() => _GardenScreenState();
+  State<Productscreen> createState() => _ProductscreenState();
 }
 
-class _GardenScreenState extends State<GardenScreen> {
+class _ProductscreenState extends State<Productscreen> {
   @override
   void initState() {
-    Provider.of<GardenProvider>(context, listen: false)
-        .getAllGardensData(context: context);
+    Provider.of<ProductProvider>(context, listen: false)
+        .ProductData(context: context);
 
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    final garden = Provider.of<GardenProvider>(context);
+    final cat = Provider.of<ProductProvider>(context);
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
@@ -37,12 +39,11 @@ class _GardenScreenState extends State<GardenScreen> {
               color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
         ),
       ),
-      body: garden.loadingSpinner
+      body: cat.loadingSpinner
           ? Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('jjjjj'),
-                CircularProgressIndicator(
+                const CircularProgressIndicator(
                   color: Colors.green,
                 ),
                 const SizedBox(
@@ -50,24 +51,25 @@ class _GardenScreenState extends State<GardenScreen> {
                 ),
               ],
             )
-          : garden.gardens.isEmpty
+          : cat.cats.isEmpty
               ? Text('No Famers...')
               : SizedBox(
                   height: size.height * 0.9,
                   child: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        mainAxisSpacing: 10,
-                        crossAxisSpacing: 10,
                         crossAxisCount: 2,
-                        childAspectRatio: 0.4),
-                    scrollDirection: Axis.vertical,
-                    itemCount: garden.gardens.length,
-                    itemBuilder: (context, intex) {
-                      return GardenWidget(
-                        id: garden.gardens[intex].packageId,
-                        name: garden.gardens[intex].packageName,
-                        image: garden.gardens[intex].photo,
-                        description: garden.gardens[intex].description,
+                        crossAxisSpacing: 15,
+                        mainAxisSpacing: 15,
+                        childAspectRatio: 0.6),
+                    itemBuilder: (context, index) {
+                      return Productswid(
+                        id: cat.cats[index].id,
+                        name: cat.cats[index].name,
+                        categoryId: cat.cats[index].categoryId,
+                        file: cat.cats[index].file,
+                        quantity: cat.cats[index].quantity,
+                        description: cat.cats[index].description,
+                        price: cat.cats[index].price,
                       );
                     },
                   ),
